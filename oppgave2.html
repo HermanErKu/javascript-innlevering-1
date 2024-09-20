@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 2</title>
+</head>
+<body>
+    <h1>Oppgave 2</h1>
+
+    <button onclick="checkInn()">Sjekk inn</button>
+    <p id="checkInText"></p>
+
+    <script>
+        function checkInn() {
+            let time = new Date().getHours();
+            if (time < 10) {
+                document.getElementById("checkInText").innerText = "God morgen din fjellgeit";
+            } else {
+                document.getElementById("checkInText").innerText = "God dag din fjellgeit";
+            }
+        }
+    </script>
+</body>
+</html>
