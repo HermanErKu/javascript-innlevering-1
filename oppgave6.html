@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 6</title>
+</head>
+<body>
+    <h1>Oppgave 6</h1>
+
+    <p id="divisibleByTwo"></p>
+    <p id="divisibleByThree"></p>
+ 
+    <button onclick="userInput()">Oppgave d</button>
+    <p id="userDivisible"></p>
+
+    
+    <script>
+        let divisibleByTwo = [];
+        let divisibleByThree = [];
+
+        function checkNumbers(lowestNum, highestNum, divisibleNum) {
+            let numbers = [];
+            for (let i = lowestNum; i <= highestNum; i++) {
+                if (i % divisibleNum === 0) {
+                    numbers.push(i);
+                }
+            }
+            return numbers;
+        }
+        document.getElementById("divisibleByTwo").innerHTML = "Tall mellom 1 og 60 som er delelig på 2: <br>" + checkNumbers(1, 60, 2).toString() + "<br><br>";
+        document.getElementById("divisibleByThree").innerHTML = "Tall mellom 1 og 60 som er delelig på 3: <br>" + checkNumbers(1, 60, 3).toString() + "<br><br>";
+
+
+        function userInput() {
+            lowestNum = parseInt(prompt("Skriv inn laveste tall"));
+            highestNum = parseInt(prompt("Skriv inn høyeste tall"));
+            divisibleNum = parseInt(prompt("Skriv inn tall som skal deles på"));
+
+            document.getElementById("userDivisible").innerHTML = "Tall som er delelig med " + divisibleNum + " mellom " + lowestNum + " og " + highestNum + ": <br>" + checkNumbers(lowestNum, highestNum, divisibleNum);
+        }
+    </script>
+</body>
+</html>
