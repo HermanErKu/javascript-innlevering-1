@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 7</title>
+</head>
+<body>
+    <button onclick="throwDice(4)">D4</button>
+    <button onclick="throwDice(6)">D6</button>
+    <button onclick="throwDice(8)">D8</button>
+    <button onclick="throwDice(10)">D10</button>
+    <button onclick="throwDice(12)">D12</button>
+    <button onclick="throwDice(20)">D20</button>
+
+    <button onclick="throwDice(100)">Prosent terning</button>
+
+    <p style="font-size: 24px;" id="diceResult"></p>
+
+
+    <script>
+        function throwDice(eyes) {
+            let dice = Math.floor(Math.random() * eyes) + 1;
+
+
+            if (dice == 20 && eyes == 20) {
+                document.getElementById("diceResult").innerHTML = "Du kastet " + dice + "<br><strong style='color: red;'>! Critical hit!</strong>";
+            } else if (dice == 1 && eyes == 20) {
+                document.getElementById("diceResult").innerHTML = "Du kastet " + dice + "<br><strong style='color: red'>! Critical fail!</strong>";
+            } else {
+                document.getElementById("diceResult").innerText = "Du kastet " + dice + "!";
+            }
+        }
+    </script>
+</body>
+</html>
