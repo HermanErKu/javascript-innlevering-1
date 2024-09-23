@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 4</title>
+</head>
+<body>
+    <h1>Kast en terning</h1>
+    
+    <img src="" id="diceImage" height="100px" width="100px">
+    <p id="diceText">Kast en terning</p>
+
+    <button onclick="rollDice()">Kast terning</button>
+    
+    <script>
+        function rollDice() {
+            let dice = Math.floor(Math.random() * 6) + 1;
+            document.getElementById("diceText").innerText = "Du kastet " + dice + "!";
+
+            document.getElementById("diceImage").src = "https://game-icons.net/icons/ffffff/000000/1x1/skoll/inverted-dice-" + dice + ".svg";
+        }
+    </script>
+</body>
+</html>
