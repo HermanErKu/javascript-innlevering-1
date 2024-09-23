@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 3</title>
+</head>
+<body>
+    <h1>Quiz om JavaScript</h1>
+
+    <script>
+        let questions = [
+            {
+                question: "Hva står JS for i programmeringssammenheng?",
+                answer: "JavaScript"
+            },
+            {
+                question: "Hvordan skriver man til konsollen i JavaScript?",
+                answer: "console.log()"
+            },
+            {
+                question: "Hvordan kan du skrive til dokumentet i JavaScript?",
+                answer: "document.write()"
+            }
+        ];
+
+        let correctAnswers = 0;
+
+        for (let i = 0; i < questions.length; i++) {
+            let userAnswer = prompt(questions[i].question);
+            if (userAnswer.toLowerCase() === questions[i].answer.toLowerCase()) {
+                correctAnswers++;
+            }
+        }
+
+        if (correctAnswers === questions.length) {
+            alert("Gratulerer! Du fikk alt riktig!");
+        } else {
+            alert("Du fikk " + correctAnswers + " av " + questions.length + " riktig!");
+        }
+    </script>
+</body>
+</html>
